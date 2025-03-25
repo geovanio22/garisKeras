@@ -1,19 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>mensagen</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMPUTER SCIENCE DIT</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg, #3f4c6b, #1d1b1b);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: white;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+        .container {
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(15px);
+            max-width: 700px;
+            animation: fadeIn 1.8s ease-in-out;
+            transform: scale(1);
+        }
+        h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            animation: glowAnimation 1.5s infinite alternate;
+        }
+        p {
+            font-size: 1.5rem;
+            line-height: 1.6;
+            margin-top: 10px;
+            opacity: 0.85;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes glowAnimation {
+            0% {
+                text-shadow: 0 0 5px #fff, 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700;
+            }
+            100% {
+                text-shadow: 0 0 20px #FFD700, 0 0 30px #FFD700, 0 0 40px #FFD700, 0 0 50px #FFD700;
+            }
+        }
+    </style>
 </head>
-
 <body>
-  <div class="container">
-    <h1 class="text-animation">Thank you</h1>
-    <p class="subtext">My Bro Abrao</p>
-  </div>
-  <script src="script.js"></script>
+    <div class="container">
+        <h1 id="text">COMPUTER SCIENCE DIT</h1>
+        <p>Exploring the world of technology, innovation, and progress.</p>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const text = document.getElementById("text");
+            setInterval(() => {
+                text.classList.toggle("glow");
+            }, 1500);
+        });
+    </script>
 </body>
-
 </html>
